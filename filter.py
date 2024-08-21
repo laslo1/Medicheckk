@@ -42,7 +42,7 @@ def calculate_hr(frames, face, fps):
     peaks, _ = find_peaks(intensity_values, distance=fps/2)  
         # Calculate HR
     num_beats = len(peaks) #  la cantidad de picos hallados
-    duration_seconds = len(intensity_values) / fps # cuantos frames hay entre fps <<<< Probablemente el error esta aqui len(frames) todos los frames tomados
+    duration_seconds = len(frames) / fps # cuantos frames hay entre fps <<<< Probablemente el error esta aqui len(frames) todos los frames tomados
     #intentar probando con el valor 6 ^^^^^
     #hr=(num_beats/6)*60
     hr = (num_beats / duration_seconds) * 60 # 10 picos en 180 frames pero se toman mas de 180 ☻ (Por eso el posible error)
